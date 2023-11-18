@@ -1,9 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-// import { Carousel } from "react-responsive-carousel";
-
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Search = ({ movies, initialRecommendations }) => {
   const [search, setSearch] = useState("");
@@ -118,7 +115,7 @@ const Search = ({ movies, initialRecommendations }) => {
         </div>
       </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5 space-y-5 md:space-y-0">
-        {recommendations?.map((recommendation) => (
+        {recommendations?.slice(0, 8).map((recommendation) => (
           <Reveal key={recommendation.id}>
             <div className="p-2 md:p-4 cursor-pointer rounded text-lg space-y-5 ">
               <div className="flex items-center justify-center">
